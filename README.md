@@ -15,4 +15,4 @@ https://mrparth-the-coder.github.io/portfolio-angularjs/
 - Contact form
 
 ## 📬 Contact
-LinkedIn: https://linkedin.com/in/yourprofile
+LinkedIn: https://www.linkedin.com/in/mrparth-gondaliya/
