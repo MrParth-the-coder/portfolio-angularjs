@@ -1,0 +1,108 @@
+<div class="container" ng-controller="aboutController">
+
+<div class="profile-header">
+    <img ng-src="assets/parth_image.png" alt="Profile Photo" class="profile">
+    <div class="profile-info">
+        <h1>{{profile.name}}</h1>
+        <h3>{{profile.title}}</h3>
+        <p class="summary">{{profile.summary}}</p>
+    </div>
+</div>
+
+<div class="about-grid">
+    <div class="card">
+        <h2>Contact Information</h2>
+        <div class="contact-list">
+            <div class="contact-item">
+                <span class="contact-icon">🎂</span>
+                <strong>Birthday:</strong> {{profile.birthday}}
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">📞</span>
+                <strong>Phone:</strong> {{profile.phone}}
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">🏙️</span>
+                <strong>City:</strong> {{profile.city}}
+            </div>
+            <div class="contact-item">
+                <span class="contact-icon">✉️</span>
+                <strong>Email:</strong> <a href="mailto:{{profile.email}}">{{profile.email}}</a>
+            </div>
+        </div>
+
+        <!-- Social Profiles integrated into contact card -->
+        <div class="social-profiles-section">
+            <h3>Social Profiles</h3>
+            <div class="social-links">
+                <a ng-repeat="link in profile.links" href="{{link.url}}" target="_blank" class="social-link">
+                    <span class="social-icon">{{link.label === 'LinkedIn' ? '💼' : '🐙'}}</span>
+                    {{link.label}}
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Interests</h2>
+        <div class="interests-grid">
+            <div ng-repeat="interest in profile.interests" class="interest-item">
+                <span class="interest-icon">{{getInterestIcon(interest)}}</span>
+                {{interest}}
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Education</h2>
+        <div ng-repeat="edu in profile.education" class="education-item">
+            <h3>{{edu.degree}}</h3>
+            <p class="period"><em>{{edu.period}}</em></p>
+            <div class="coursework">
+                <strong>Relevant Coursework:</strong>
+                <div class="coursework-tags">
+                    <span ng-repeat="course in edu.coursework" class="course-tag">{{course}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Certifications</h2>
+        <div class="certifications-grid">
+            <div ng-repeat="cert in profile.certifications" class="cert-item">
+                <a href="{{cert.url}}" target="_blank" class="cert-link">
+                    <img ng-src="{{cert.icon}}" alt="Certificate" class="cert-icon">
+                    <span>{{cert.title}}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card experience-card">
+        <h2>Professional Experience</h2>
+        <div class="experience-timeline">
+            <div ng-repeat="exp in profile.experience" class="experience-item">
+                <div class="experience-header">
+                    <div class="company-info">
+                        <h3 class="company-name">{{exp.company}}</h3>
+                        <div class="role-badge">{{exp.role}}</div>
+                    </div>
+                    <div class="experience-period">
+                        <span class="period-text">{{exp.period}}</span>
+                    </div>
+                </div>
+                <div class="experience-content">
+                    <ul class="experience-achievements">
+                        <li ng-repeat="item in exp.bullets" class="achievement-item">
+                            <span class="achievement-bullet">▹</span>
+                            <span class="achievement-text">{{item}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="container" ng-controller="skillController">
+
+<h1>My Skills</h1>
+
+<div class="skills-grid">
+    <div class="card" ng-repeat="group in skillGroups">
+        <h2>{{group.title}}</h2>
+        <div class="skills-list">
+            <div class="skill-item" ng-repeat="s in group.skills">
+                <div class="skill-header">
+                    <img ng-if="s.icon" ng-src="{{s.icon}}" class="skill-icon" alt="{{s.name}} logo">
+                    <span class="skill-name">{{s.name}}</span>
+                    <span class="skill-level">{{s.level}}</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-fill" ng-style="{ width: s.level }"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

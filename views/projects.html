@@ -1,0 +1,40 @@
+<div class="container" ng-controller="projectController">
+
+<h1>Projects</h1>
+
+<!-- Filter Buttons -->
+<div class="filter-row">
+    <button class="filter-btn" ng-class="{active: selectedCategory === cat.value}" ng-click="setCategory(cat.value)" ng-repeat="cat in categories">
+        {{cat.label}}
+    </button>
+</div>
+
+<!-- Projects Grid -->
+<div class="projects-grid">
+    <div class="project-card" ng-repeat="p in projects | filter:projectCategoryFilter">
+        <div class="project-image-container">
+            <img ng-src="{{p.image}}" alt="{{p.name}}" class="project-image">
+            <div class="project-overlay">
+                <div class="project-tech">{{p.tech}}</div>
+            </div>
+        </div>
+
+        <div class="project-content">
+            <h3 class="project-title">{{p.name}}</h3>
+            <p class="project-description">{{p.desc}}</p>
+
+            <div class="project-actions">
+                <a class="btn btn-primary" ng-href="{{p.github}}" target="_blank">
+                    <span class="btn-icon">📁</span>
+                    View on GitHub
+                </a>
+                <a class="btn btn-secondary" ng-if="p.demo" ng-href="{{p.demo}}" target="_blank">
+                    <span class="btn-icon">🚀</span>
+                    Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,61 @@
+<div class="container" ng-controller="resumeController">
+
+<h1>{{resume.title}}</h1>
+
+<div class="resume-grid">
+    <!-- Resume Download Section -->
+    <div class="resume-card resume-download">
+        <div class="card-header">
+            <div class="card-icon">📄</div>
+            <h2>Resume</h2>
+        </div>
+        <p class="card-description">Download my resume or view it online</p>
+        <div class="resume-actions">
+            <a class="btn btn-primary" href="{{resume.resumePdf}}" download>
+                <span class="btn-icon">📄</span>
+                Download PDF
+            </a>
+            <a class="btn btn-secondary" href="{{resume.resumeGoogle}}" target="_blank">
+                <span class="btn-icon">🔗</span>
+                View on Google Drive
+            </a>
+        </div>
+    </div>
+
+    <!-- Helpful Links Section -->
+    <div class="resume-card helpful-links">
+        <div class="card-header">
+            <div class="card-icon">🔗</div>
+            <h2>Helpful Links</h2>
+        </div>
+        <p class="card-description">Explore my projects and portfolio</p>
+        <div class="links-grid">
+            <a class="link-item" ng-repeat="link in resume.links" href="{{link.url}}" target="_blank">
+                <img ng-if="link.icon" ng-src="{{link.icon}}" alt="{{link.label}} icon" class="link-icon" />
+                <span class="link-text">{{link.label}}</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Tools & Technologies Section -->
+    <div class="resume-card tools-section">
+        <div class="card-header">
+            <div class="card-icon">🛠️</div>
+            <h2>Tools & Technologies</h2>
+        </div>
+        <p class="card-description">Technologies I work with regularly</p>
+        <div class="tools-grid">
+            <div class="tool-item" ng-repeat="tool in resume.tools">
+                <div class="tool-icon-container">
+                    <img ng-src="{{tool.icon}}" alt="{{tool.name}} logo" class="tool-logo" />
+                </div>
+                <span class="tool-name">{{tool.name}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+
+</div>
