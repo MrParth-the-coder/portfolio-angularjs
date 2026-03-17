@@ -1,7 +1,7 @@
 # 🚀 Parth Gondaliya Portfolio
 
 ## 🔥 Live Website
-https://yourusername.github.io/portfolio-angularjs/
+https://mrparth-the-coder.github.io/portfolio-angularjs/
 
 ## 💻 Tech Stack
 - AngularJS
